@@ -1,0 +1,63 @@
+{
+  "name": "memories",
+  "private": true,
+  "description": "Memories through my lens",
+  "version": "0.1.0",
+  "author": "Sylvester Aswin Stanley <me@sylvesteraswin.com>",
+  "dependencies": {
+    "@bootstrap-styled/provider": "^1.4.2",
+    "@bootstrap-styled/v4": "^3.0.16",
+    "auth0-js": "^9.11.2",
+    "dotenv": "^8.0.0",
+    "gatsby": "^2.13.25",
+    "gatsby-image": "^2.2.6",
+    "gatsby-plugin-layout": "^1.1.2",
+    "gatsby-plugin-manifest": "^2.2.3",
+    "gatsby-plugin-offline": "^2.2.4",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.2",
+    "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-plugin-react-svg": "^2.1.1",
+    "gatsby-plugin-sharp": "^2.2.7",
+    "gatsby-plugin-styled-components": "^3.1.2",
+    "gatsby-source-filesystem": "^2.1.5",
+    "gatsby-transformer-sharp": "^2.2.3",
+    "localforage": "^1.7.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "@types/react-helmet": "^5.0.8",
+    "@types/styled-components": "^4.1.18",
+    "classnames": "^2.2.6",
+    "gatsby-plugin-typescript": "^2.1.2",
+    "prettier": "^1.18.2"
+  },
+  "keywords": [
+    "memories",
+    "sylvester aswin",
+    "sylvester",
+    "aswin",
+    "react",
+    "cloudinary"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "clear": "rm -rf ./.cache && rm -rf ./public",
+    "now-build": "yarn clear && gatsby build",
+    "build": "yarn clear && gatsby build",
+    "format": "prettier --write src/**/*.{ts,tsx}",
+    "start": "yarn clear && gatsby develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> Sylvester\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sylvesteraswin/sylvesteraswin.com.git"
+  },
+  "bugs": {
+    "url": "https://github.bus.zalan.do/zds/zds-shadow/issues"
+  }
+}
