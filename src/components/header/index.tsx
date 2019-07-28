@@ -22,6 +22,7 @@ const Header = styled(HeaderBase)`
   z-index: 20;
   width: 100vw;
   transition: 0.4s ease;
+  position: fixed;
 `;
 
 const HeaderWrapper = styled.div`

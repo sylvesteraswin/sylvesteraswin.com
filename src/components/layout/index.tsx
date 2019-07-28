@@ -1,12 +1,18 @@
-import cx from "classnames";
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import styled from "styled-components";
 import BootstrapProvider from "@bootstrap-styled/provider";
 
 import theme from "../../theme";
 
 import Header from "../header";
+import Footer from "../footer";
 import "./layout.css";
+
+const Main = styled("main")`
+  margin-top: ${theme.unit * 16}px;
+  margin-bottom: ${theme.unit * 10}px;
+`;
 
 interface LayoutProps {
   children: React.ReactChild;
@@ -47,8 +53,8 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
     >
       <div id="main">
         <Header siteTitle={site.siteMetadata.title} />
-        <main className={cx("posts", "blog-index")}>{children}</main>
-        <footer>Footer</footer>
+        <Main>{children}</Main>
+        <Footer />
       </div>
     </BootstrapProvider>
   );
