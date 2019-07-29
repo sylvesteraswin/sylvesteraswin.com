@@ -5,17 +5,17 @@ import {
   shouldTriggerAuthFlow,
 } from "../util/auth";
 
-const useSessionCheck = (): { authticated: boolean } => {
-  const [authticated, setAuthticated] = React.useState<boolean>(false);
+const useSessionCheck = (): { authenticated: boolean } => {
+  const [authenticated, setAuthenticated] = React.useState<boolean>(false);
   React.useEffect(() => {
     getAccessToken().then(
       () => {
         // success
-        setAuthticated(true);
+        setAuthenticated(true);
       },
       err => {
         // not logged in state
-        setAuthticated(false);
+        setAuthenticated(false);
         if (shouldTriggerAuthFlow(err)) {
           navigateAuthFlow();
         }
@@ -23,7 +23,7 @@ const useSessionCheck = (): { authticated: boolean } => {
     );
     return () => {};
   }, []);
-  return { authticated };
+  return { authenticated };
 };
 
 export default useSessionCheck;

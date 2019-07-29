@@ -16,6 +16,8 @@ import {
 } from "@bootstrap-styled/v4";
 import styled from "styled-components";
 
+import NavALink from "../NavALink";
+
 const Header = styled(HeaderBase)`
   top: 0;
   left: 0;
@@ -36,33 +38,8 @@ const HeaderWrapper = styled.div`
 
 const NavItem = styled(NavItemBase)``;
 
-const HomeLink = styled(A)``;
-
-const NavALink = styled(A)`
-  font-size: ${theme.typography.body};
-  line-height: ${theme.unit & 3};
-  transition: 0.3s ease;
-  padding: ${theme.unit * 2}px ${theme.unit * 3}px;
-  text-transform: capitalize;
-  font-weight: 500;
-  position: relative;
-  display: block;
-  line-height: ${theme.unit * 3}px;
-  &:hover {
-    &:before {
-      width: calc(100% - ${theme.unit * 6}px);
-    }
-  }
-  &:before {
-    background-color: ${theme.colors.blue[60]};
-    content: "";
-    display: block;
-    position: absolute;
-    height: ${theme.unit / 2}px;
-    width: 0px;
-    bottom: ${theme.unit}px;
-    transition: all 0.4s cubic-bezier(0.22, 0.68, 0, 1.71);
-  }
+const HomeLink = styled(A)`
+  filter: ${props => (props.blurred === "true" ? "blur(8px)" : "none")};
 `;
 
 interface HeaderProps {
@@ -88,7 +65,7 @@ const HeaderElement: React.FunctionComponent<HeaderProps> = ({ siteTitle }) => {
           <div className="header-menu">
             <Row className={cx("align-items-center", "justify-content-center")}>
               <Col xs="4" md="2">
-                <HomeLink href="/">
+                <HomeLink href="/" blurred={"true"}>
                   <Img
                     loading="lazy"
                     fixed={logoImage.childImageSharp.fixed}
