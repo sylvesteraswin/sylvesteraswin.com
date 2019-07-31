@@ -4,7 +4,7 @@ export default (src: string) => {
     img.onload = function() {
       resolve({
         width: (this as HTMLImageElement).width,
-        height: (this as HTMLImageElement).height,
+        height: (this as HTMLImageElement).height
       });
     };
     img.src = src;

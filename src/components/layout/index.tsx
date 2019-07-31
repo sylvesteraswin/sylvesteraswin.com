@@ -1,12 +1,12 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import styled from "styled-components";
 import BootstrapProvider from "@bootstrap-styled/provider";
+import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
+import styled from "styled-components";
 
 import theme from "../../theme";
 
-import Header from "../header";
 import Footer from "../footer";
+import Header from "../header";
 import "./layout.css";
 
 const Main = styled("main")`
@@ -48,7 +48,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
         "$btn-border-radius": "2px",
         "$btn-border-radius-lg": "2px",
         "$btn-border-radius-sm": "2px",
-        "$enable-rounded": true,
+        "$enable-rounded": true
       }}
     >
       <div id="main">

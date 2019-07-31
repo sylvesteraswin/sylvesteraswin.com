@@ -1,7 +1,7 @@
-import * as React from "react";
-import request from "superagent";
-import styled from "styled-components";
 import { Progress as ProgressBase, ProgressBar } from "@bootstrap-styled/v4";
+import * as React from "react";
+import styled from "styled-components";
+import request from "superagent";
 
 import theme from "../../theme";
 
@@ -58,7 +58,7 @@ const PreviewImage: React.FunctionComponent<PreviewImageProps> = ({
   photoId,
   preview,
   width,
-  height,
+  height
 }) => {
   const [percent, setPercent] = React.useState<number>(0);
   const [cdnUrl, setCdnUrl] = React.useState<string>(undefined);
@@ -68,6 +68,7 @@ const PreviewImage: React.FunctionComponent<PreviewImageProps> = ({
         .post(API_URL)
         .field("upload_preset", process.env.CLOUDINARY_UPLOAD_PRESET)
         .field("file", file)
+        .field("tags", process.env.CLOUDINARY_UPLOAD_PRESET)
         .field("multiple", true)
         .on("progress", progress => {
           if (progress.direction === "upload") {

@@ -1,8 +1,8 @@
 import * as React from "react";
 import {
-  navigateAuthFlow,
   getAccessToken,
-  shouldTriggerAuthFlow,
+  navigateAuthFlow,
+  shouldTriggerAuthFlow
 } from "../util/auth";
 
 const useSessionCheck = (): { authenticated: boolean } => {

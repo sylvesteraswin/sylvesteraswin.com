@@ -9,11 +9,11 @@ declare global {
 
 const userStoreConfig = {
   driver: localforage.INDEXEDDB,
-  name: "memories-user",
+  name: "memories-user"
 };
 
 const userStore = localforage.createInstance({
-  ...userStoreConfig,
+  ...userStoreConfig
 });
 
 export default localforage;

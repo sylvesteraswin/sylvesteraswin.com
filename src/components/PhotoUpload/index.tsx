@@ -1,11 +1,11 @@
+import { Col, Container, H6, P, Row } from "@bootstrap-styled/v4";
 import cx from "classnames";
 import * as React from "react";
 import { useDropzone } from "react-dropzone";
 import styled from "styled-components";
-import { Container, Col, H6, P, Row } from "@bootstrap-styled/v4";
 
-import PreviewImage from "../../components/PreviewImage";
 import Loader from "../../components/Loader";
+import PreviewImage from "../../components/PreviewImage";
 import theme from "../../theme";
 import getImageDimensions from "../../util/get-image-dimensions";
 
@@ -32,7 +32,7 @@ export interface PhotoUploadProps {
 }
 
 const PhotoUpload: React.FunctionComponent<PhotoUploadProps> = ({
-  authenticated = false,
+  authenticated = false
 }) => {
   if (!authenticated) {
     return (
@@ -61,11 +61,11 @@ const PhotoUpload: React.FunctionComponent<PhotoUploadProps> = ({
           file,
           ...dim,
           photoId,
-          preview,
+          preview
         });
       }
       setFiles(newFiles);
-    },
+    }
   });
   return (
     <React.Suspense
@@ -80,7 +80,7 @@ const PhotoUpload: React.FunctionComponent<PhotoUploadProps> = ({
         <input {...getInputProps()} />
         <P
           style={{
-            marginBottom: 0,
+            marginBottom: 0
           }}
         >
           Drag 'n' drop some files here, or click to select files

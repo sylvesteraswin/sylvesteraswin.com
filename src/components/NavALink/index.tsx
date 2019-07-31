@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { A } from "@bootstrap-styled/v4";
+import styled from "styled-components";
 
 import theme from "../../theme";
 

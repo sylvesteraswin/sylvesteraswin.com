@@ -1,6 +1,6 @@
 import auth0 from "auth0-js";
-import { userStore } from "./store";
 import { navigate } from "gatsby";
+import { userStore } from "./store";
 
 export const isBrowser = typeof window !== "undefined";
 
@@ -10,15 +10,15 @@ const auth = isBrowser
       clientID: process.env.AUTH0_CLIENT_ID,
       redirectUri: process.env.AUTH0_CALLBACK,
       responseType: "token id_token",
-      scope: "openid profile email",
+      scope: "openid profile email"
     })
   : {};
 
-let user = {};
+const user = {};
 
 export enum ErrorTypeEnum {
   NOT_FOUND = "NOT_FOUND",
-  EXPIRED = "EXPIRED",
+  EXPIRED = "EXPIRED"
 }
 
 export function shouldTriggerAuthFlow(err: Error) {

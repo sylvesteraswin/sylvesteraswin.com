@@ -5,3 +5,13 @@
  */
 
 // You can delete this file if you're not using it
+
+exports.onCreateWebpackConfig = ({ actions, plugins }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      plugins.define({
+        "global.GENTLY": false
+      })
+    ]
+  });
+};

@@ -1,5 +1,5 @@
 import cx from "classnames";
-import { useStaticQuery, graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import React from "react";
 
@@ -7,12 +7,12 @@ import theme from "../../theme";
 
 import {
   A,
+  Col,
   Container,
   Header as HeaderBase,
   Nav,
   NavItem as NavItemBase,
-  Row,
-  Col,
+  Row
 } from "@bootstrap-styled/v4";
 import styled from "styled-components";
 

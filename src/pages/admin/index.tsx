@@ -1,21 +1,23 @@
+import { Col, Container, H4, Nav, NavItem, Row } from "@bootstrap-styled/v4";
 import * as cx from "classnames";
 import * as React from "react";
-import { Container, Col, H4, Nav, NavItem, Row } from "@bootstrap-styled/v4";
 
-import SEO from "../../components/seo";
-import NavALink from "../../components/NavALink";
 import Loader from "../../components/Loader";
-import PhotoUpload from "../../components/PhotoUpload";
+import NavALink from "../../components/NavALink";
+import SEO from "../../components/seo";
 import useSessionCheck from "../../hooks/use-session-check";
+
+import PhotoList from "../../components/PhotoList";
+import PhotoUpload from "../../components/PhotoUpload";
 
 export enum AdminSectionEnum {
   "NEW" = "new",
-  "LIST" = "list",
+  "LIST" = "list"
 }
 
 const AdminPage = () => {
   const [activeSection, setActiveSection] = React.useState<AdminSectionEnum>(
-    AdminSectionEnum.NEW
+    AdminSectionEnum.LIST
   );
   const { authenticated } = useSessionCheck();
   if (!authenticated) {
@@ -25,7 +27,6 @@ const AdminPage = () => {
       </Container>
     );
   }
-  console.log(activeSection);
   return (
     <React.Suspense
       fallback={
@@ -45,10 +46,10 @@ const AdminPage = () => {
                   <NavItem key={index}>
                     <NavALink
                       className={cx({
-                        active: AdminSectionEnum[key] === activeSection,
+                        active: AdminSectionEnum[key] === activeSection
                       })}
                       style={{
-                        paddingLeft: 0,
+                        paddingLeft: 0
                       }}
                       onClick={(e: MouseEvent) => {
                         e.preventDefault();
@@ -65,6 +66,9 @@ const AdminPage = () => {
             <Col xs={10}>
               {activeSection === AdminSectionEnum.NEW && (
                 <PhotoUpload authenticated={authenticated} />
+              )}
+              {activeSection === AdminSectionEnum.LIST && (
+                <PhotoList authenticated={authenticated} />
               )}
             </Col>
           </Row>

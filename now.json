@@ -1,9 +1,15 @@
 {
   "version": 2,
   "name": "memories",
-  "build": {
-    "src": "package.json",
-    "use": "@now/static-build",
-    "config": { "distDir": "public" }
-  }
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "public" }
+    },
+    {
+      "src": "api/index.ts",
+      "use": "@now/node"
+    }
+  ]
 }
